@@ -8,6 +8,8 @@ import {
   Quicksand_600SemiBold,
   Quicksand_700Bold
 } from '@expo-google-fonts/quicksand';
+import React, { useLayoutEffect, useRef } from 'react';
+import AnimatedStyleUpdateExample from './components/animate_open';
 
 export default function App() {
   let [fontsLoaded, fontError] = useFonts({
@@ -24,8 +26,11 @@ export default function App() {
   return (
     <SafeAreaProvider>
       <View style={styles.container}>
-        <div style={{ fontFamily: 'Quicksand_400Regular' }}>
-          <Text>Open up App.tsx to start working on your app!</Text>
+        <div ref={(node) =>
+          node?.style.setProperty("font-family", "Quicksand_400Regular", "important")
+        }>
+          <Text style={{ fontFamily: 'Quicksand_400Regular' }}>Open up App.tsx to start working on your app!</Text>
+          {/* <AnimatedStyleUpdateExample></AnimatedStyleUpdateExample> */}
           <StatusBar style="auto" />
         </div>
       </View>
