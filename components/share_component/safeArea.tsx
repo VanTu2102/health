@@ -9,10 +9,11 @@ export default function SafeArea({ children }: { children: JSX.Element }) {
   return (
     <View
       style={{
-        paddingTop: insets.top,
-        paddingBottom: insets.bottom,
+        paddingTop: insets.top + 50,
+        paddingBottom: insets.bottom + 90,
         width: '100%',
-        height: '100%'
+        height: '100%',
+        backgroundColor:'gray'
       }}>
       {children}
     </View>
